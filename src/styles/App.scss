@@ -1,1 +1,67 @@
+* {
+    margin: 0;
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box; 
+}
 
+// variables --------------------------------------
+
+// font sizes
+$h1: 24 / 16 + rem;
+$h2: 18 / 16 + rem;
+$h3: 16 / 16 + rem;
+$h4: 14 / 16 + rem;
+$h5: 13 / 16 + rem;
+$form-help-txt: 12 / 16 + rem;
+$thumbnail-hover: 10 / 16 + rem;
+
+@mixin pointer {
+    cursor: pointer
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+a {
+    color: blue;
+}
+
+.todo-container {
+    padding: 2rem;
+    border: 1px black solid;
+    // variable
+    $border: 1px rgb(150, 150, 150) solid;
+
+    h2 {
+        margin-bottom: $h5;
+    }
+
+    .todo {
+        margin: 1rem 0;
+        border-bottom: $border;
+        border-top: $border;
+        padding: 1rem;
+        &__block {
+            @include pointer();
+            margin: .25rem 0;
+            color: rgb(206, 36, 36);
+            &:hover {
+                color: black;
+            }
+            &--completed {
+                text-decoration: line-through;
+                color: black;
+            }
+        }
+    }
+
+    footer {
+        font-size: $h5;
+        text-align: center;
+    }
+}

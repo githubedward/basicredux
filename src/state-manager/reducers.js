@@ -8,21 +8,6 @@ import { combineReducers } from 'redux';
 
 const { SHOW_ALL } = VisibilityFilters;
 
-// state shape
-// {
-//     visibilityFilter: 'SHOW_ALL',
-//     todos: [
-//         {
-//             text: 'Learn redux',
-//             completed: false,
-//         },
-//         {
-//             text: 'learn more redux',
-//             completed: false
-//         }
-//     ]
-// }
-
 // todos reducer
 const todos = (state = [], action) => {
     switch (action.type) {
@@ -60,7 +45,7 @@ const visibilityFilter = (state = SHOW_ALL, action) => {
 }
 
 // todoApp reducer
-// export default const todoApp = (state = origState, action) => {
+// const toDoApp = (state = {}, action) => {
 //     return {
 //         visibilityFilter: visibilityFilter(state.visibilityFilter, action),
 //         todos: todos(state.todos, action)
@@ -68,10 +53,10 @@ const visibilityFilter = (state = SHOW_ALL, action) => {
 // }
 
 // boilerplate logic same as above using combineReducers
-const todoApp = combineReducers({
+const toDoApp = combineReducers({
     visibilityFilter,
     todos
 })
 
-export default todoApp;
+export default toDoApp;
 
