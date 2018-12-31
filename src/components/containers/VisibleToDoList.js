@@ -3,8 +3,6 @@ import { toggleToDo, VisibilityFilters } from '../../state-manager/actions'
 import ToDoList from '../presentationals/ToDoList'
 // import React, {Component} from 'react';
 
-
-
 const getVisibleTodos = (todos, filter) => {
   const { SHOW_ALL, SHOW_ACTIVE, SHOW_COMPLETED } = VisibilityFilters;
   switch(filter) {
