@@ -1,19 +1,32 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-export default class ToDo extends Component {
-  render() {
-    const { onClick, completed, text } = this.props;
-    return (
-      <li
-        onClick={onClick}
-        className={`todo__block ${completed ? 'todo__block--completed' : null}`}
-      >
-        {text}
-      </li>
-    )
-  }
+const ToDo = ({onClick, completed, text}) => {
+  return (
+    <li
+      onClick={onClick}
+      className={`todo__block ${completed ? 'todo__block--completed' : null}`}
+    >
+      {text}
+    </li>
+  )
 }
+
+export default ToDo;
+
+// export default class ToDo extends Component {
+//   render() {
+//     const { onClick, completed, text } = this.props;
+//     return (
+//       <li
+//         onClick={onClick}
+//         className={`todo__block ${completed ? 'todo__block--completed' : null}`}
+//       >
+//         {text}
+//       </li>
+//     )
+//   }
+// }
 
 ToDo.propTypes = {
   onClick: PropTypes.func.isRequired,

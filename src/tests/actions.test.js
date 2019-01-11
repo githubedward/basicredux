@@ -1,5 +1,5 @@
-import * as actions from '../state-manager/actions/index';
-import * as types from '../state-manager/actions/constants';
+import * as actions from '../state/actions/index';
+import * as types from '../state/actions/constants';
 
 describe('actions', () => {
   it('should create an action to add a todo', () => {

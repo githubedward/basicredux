@@ -1,5 +1,5 @@
 import todoReducer from '../state-manager/reducers/todos';
-import visibilityFilter from '../state-manager/reducers/visibilityFilter';
+import visibilityFilter from '../state/reducers/visibilityFilter';
 import * as types from '../state-manager/actions/constants';
 
 const deepFreeze = require('deep-freeze');

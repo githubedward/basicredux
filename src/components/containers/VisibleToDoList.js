@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import { toggleToDo, VisibilityFilters } from '../../state-manager/actions'
+import { VisibilityFilters } from '../../state/actions/constants';
+import { toggleToDo } from '../../state/actions/index';
 import ToDoList from '../presentationals/ToDoList'
 // import React, {Component} from 'react';
 

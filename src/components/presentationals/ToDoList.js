@@ -1,19 +1,31 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import ToDo from './ToDo'
 
-export default class ToDoList extends Component {
-  render() {
-    const { todos, onToggleToDo } = this.props;
-    return (
-      <ul className='todo'>
-        {todos.map((todo, index) => {
-          return <ToDo key={index} {...todo} onClick={() => onToggleToDo(index)} />
-        })}
-      </ul>
-    )
-  }
+const ToDoList = ({todos, onToggleToDo}) => {
+  return (
+    <ul className='todo'>
+      {todos.map((todo, index) => {
+        return <ToDo key={index} {...todo} onClick={() => onToggleToDo(index)} />
+      })}
+    </ul>
+  )
 }
+
+export default ToDoList;
+
+// export default class ToDoList extends Component {
+//   render() {
+//     const { todos, onToggleToDo } = this.props;
+//     return (
+//       <ul className='todo'>
+//         {todos.map((todo, index) => {
+//           return <ToDo key={index} {...todo} onClick={() => onToggleToDo(index)} />
+//         })}
+//       </ul>
+//     )
+//   }
+// }
 
 ToDoList.propTypes = {
   todos: PropTypes.arrayOf(

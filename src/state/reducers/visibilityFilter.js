@@ -1,4 +1,5 @@
 import { VisibilityFilters } from '../actions/constants';
+import { SET_VISIBILITY_FILTER } from '../actions/constants'
 
 const { SHOW_ALL } = VisibilityFilters;
 // visibility reducer
