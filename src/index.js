@@ -1,24 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import toDoApp from './state-manager/reducers';
+import toDoApp from './state/reducers/index';
 
 const store = createStore(toDoApp);
 console.log(store.getState());
 store.subscribe(() => console.log(store.getState()))
 
-
-ReactDOM.render(
+const Root = ({ store }) => (
   <Provider store={store}>
-    <App />
-  </Provider>, 
-  document.getElementById('root'));
+    <Router>
+      <Route path="/:filter?" component={App} />
+    </Router>
+  </Provider>
+)
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(<Root store={store} />, document.getElementById('root'));

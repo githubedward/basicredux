@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import { VisibilityFilters } from '../../state/actions/constants';
 import { toggleToDo } from '../../state/actions/index';
 import ToDoList from '../presentationals/ToDoList'
-// import React, {Component} from 'react';
 
 const getVisibleTodos = (todos, filter) => {
   const { SHOW_ALL, SHOW_ACTIVE, SHOW_COMPLETED } = VisibilityFilters;
@@ -14,9 +13,9 @@ const getVisibleTodos = (todos, filter) => {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    todos: getVisibleTodos(state.todos, state.visibilityFilter)
+    todos: getVisibleTodos(state.todos, ownProps.filter) /* previously was getVisibleTodos(state.todos, state.visibilityFilter) */
   }
 }
 
